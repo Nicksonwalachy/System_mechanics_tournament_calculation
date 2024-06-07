@@ -23,10 +23,11 @@
         </header>
         <Div class="options spacebutton"> <a href="./registerteam.php"><input id="registerteam" class="btn btn-primary"
                     type="button" value="Cadastrar Equipe"></a>
+            <a href="./registermember.php"><input id="registermember" class="btn btn-primary" type="button" value="Registrar Membros"></a>
             <a href="./adddadosprovas.php"><input id="play" class="btn btn-primary" type="button" value="Iniciar"></a>
             <a href="./ranking.php"><input id="viewranking" class="btn btn-primary" type="button"
                     value="Ver Ranking"></a>
-            <a href="./viewteam.html"><input id="viewteam" class="btn btn-primary" type="button"
+            <a href="./viewteam.php"><input id="viewteam" class="btn btn-primary" type="button"
                     value="Consultar Equipes"></a>
         </Div>
     </main>
@@ -34,5 +35,4 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 </body>
-
 </html>

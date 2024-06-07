@@ -25,13 +25,13 @@
   </select>
   <br>
   Velocidade:<br>
-  <input type="number" name="velocidade">
+  <input type="number" step="0.01" name="velocidade">
   <br>
   Tração:<br>
-  <input type="number" name="tracao">
+  <input type="number" step="0.01" name="tracao">
   <br>
   Rampa:<br>
-  <input type="number" name="rampa">
+  <input type="number" step="0.01" name="rampa">
   <br><br>
   <input type="submit" value="Enviar">
 </form> 
