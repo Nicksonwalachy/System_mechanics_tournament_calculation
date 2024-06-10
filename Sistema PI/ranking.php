@@ -27,12 +27,12 @@ try {
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Crie um array para armazenar os rankings
-    $colunas = array("velocidade", "tração", "rampa");
+    $colunasvlcd =array( "velocidade");
 
     // Percorra cada coluna e crie um ranking
-    foreach ($colunas as $coluna) {
+    foreach ($colunasvlcd as $colunavlcd) {
         // Crie a consulta SQL
-        $sql = "SELECT nome_equipe, $coluna FROM equipe ORDER BY $coluna";
+        $sql = "SELECT nome_equipe, $colunavlcd FROM equipe ORDER BY $colunavlcd";
 
         // Prepare a declaração SQL
         $stmt = $conexao->prepare($sql);
@@ -44,11 +44,64 @@ try {
         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
         // Exiba cada linha de resultado
-        echo "Ranking da coluna $coluna:<br>";
+        echo "Ranking $colunavlcd:<br>";
+        $iv = 1;
         foreach($stmt->fetchAll() as $linha) {
-            echo "Equipe: " . $linha["nome_equipe"]. " - $coluna: " . $linha[$coluna]. "<br>";
+            echo $iv . "º Equipe: " . $linha["nome_equipe"]. " - $colunavlcd: " . $linha[$colunavlcd] . "<br>";
+            $iv++;
         }
         echo "<br>";
+    }
+    $colunas1 =array( "rampa");
+
+    // Percorra cada coluna e crie um ranking
+    foreach ($colunas1 as $coluna1) {
+        // Crie a consulta SQL
+        $sql = "SELECT nome_equipe, $coluna1 FROM equipe ORDER BY $coluna1 desc";
+
+        // Prepare a declaração SQL
+        $stmt = $conexao->prepare($sql);
+
+        // Execute a declaração
+        $stmt->execute();
+
+        // Defina o modo de busca para associativo
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Exiba cada linha de resultado
+        $ir = 1;
+        foreach($stmt->fetchAll() as $linha) {
+            echo $ir . "º Equipe: " . $linha["nome_equipe"]. " - $coluna1: " . $linha[$coluna1] . "<br>";
+            $ir++;
+        }
+        echo "<br>";
+        
+    }
+    $colunas2 =array( "tração");
+
+    // Percorra cada coluna e crie um ranking
+    foreach ($colunas2 as $coluna2) {
+        // Crie a consulta SQL
+        $sql = "SELECT nome_equipe, $coluna2 FROM equipe ORDER BY $coluna2";
+
+        // Prepare a declaração SQL
+        $stmt = $conexao->prepare($sql);
+
+        // Execute a declaração
+        $stmt->execute();
+
+        // Defina o modo de busca para associativo
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+        // Exiba cada linha de resultado
+        echo "Ranking da coluna $coluna2:<br>";
+        $it = 1;
+foreach($stmt->fetchAll() as $linha) {
+    echo $it . "º Equipe: " . $linha["nome_equipe"]. " - $coluna2: " . $linha[$coluna2] . "<br>";
+    $it++;
+}
+echo "<br>";
+
     }
 }
 catch(PDOException $e) {

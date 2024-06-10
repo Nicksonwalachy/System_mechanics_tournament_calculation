@@ -19,7 +19,7 @@
     <main data-theme="dark">
         <header class="flex align-center justify-between">
             <H1>Programa de calculos PI</H1>
-            <button id="themeSwitcher" class="btn-primary">Switch Theme Dark/Light</button>     
+           <a href src="https://minecraft.fandom.com/pt/wiki/Alavanca"></a> <button id="themeSwitcher" class="btn-primary">Switch Theme Dark/Light</button>   </a>  
         </header>
         <Div class="options spacebutton"> <a href="./registerteam.php"><input id="registerteam" class="btn btn-primary"
                     type="button" value="Cadastrar Equipe"></a>

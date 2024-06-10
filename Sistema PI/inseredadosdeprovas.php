@@ -25,8 +25,11 @@ $tracao = $_POST['tracao'];
 $rampa = $_POST['rampa'];
 
 // Preparando a consulta SQL
-$stmt = $conn->prepare("UPDATE Equipe SET velocidade = ?, tração = ?, rampa = ? WHERE id = ?");
-$stmt->bind_param("dddi", $velocidade, $tracao, $rampa, $id_equipe);
+
+
+///////// velocidade
+$stmt = $conn->prepare("UPDATE Equipe SET velocidade = ? WHERE id = ?");
+$stmt->bind_param("di", $velocidade, $id_equipe);
 
 // Executando a consulta
 if ($stmt->execute()) {
@@ -34,6 +37,28 @@ if ($stmt->execute()) {
 } else {
     echo "Erro: " . $stmt->error;
 }
+/////// tração
+$stmt1 = $conn->prepare("UPDATE Equipe SET tração = ? WHERE id = ?");
+$stmt1->bind_param("di", $tracao, $id_equipe);
+
+// Executando a consulta
+if ($stmt1->execute()) {
+    echo "Dados adicionados com sucesso à equipe selecionada";
+} else {
+    echo "Erro: " . $stmt2->error;
+}
+
+//////// rampa
+
+$stmt2 = $conn->prepare("UPDATE Equipe SET rampa = ? WHERE id = ?");
+$stmt2->bind_param("di", $rampa, $id_equipe);
+
+// Executando a consulta
+if ($stmt2->execute()) {
+    echo "Dados adicionados com sucesso à equipe selecionada";
+} else {
+    echo "Erro: " . $stmt2->error;}
+
 
 // Fechando a conexão
 $conn->close();
