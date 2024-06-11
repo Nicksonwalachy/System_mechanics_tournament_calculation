@@ -14,10 +14,6 @@
     <title>Document</title>
 </head>
 <body>
-<header class="flex align-center justify-between">
-            <H1>Programa de calculos PI</H1>
-            <button id="themeSwitcher" class="btn-primary">Switch Theme Dark/Light</button>  
-        </header>
         <?php
 try {
     // Conecte-se ao banco de dados

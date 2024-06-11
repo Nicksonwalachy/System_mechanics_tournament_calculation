@@ -49,7 +49,6 @@
   <input type="number" step="0.01" name="rampa">
   <input class="btn btn-primary" type="submit" value="Enviar">
   <br><br>
-  <input class="btn btn-primary" type="submit" value="Enviar">
 </form> 
 
 </body>
