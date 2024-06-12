@@ -41,14 +41,8 @@
   <input type="number" step="0.01" name="velocidade">
   <input class="btn btn-primary" type="submit" value="Enviar">
   <br>
-  Tração:<br>
-  <input type="number" step="0.01" name="tracao">
-  <input class="btn btn-primary" type="submit" value="Enviar">
-  <br>
-  Rampa:<br>
-  <input type="number" step="0.01" name="rampa">
-  <input class="btn btn-primary" type="submit" value="Enviar">
-  <br><br>
+
+  
 </form> 
 
 </body>

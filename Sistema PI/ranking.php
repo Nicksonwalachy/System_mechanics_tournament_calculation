@@ -103,6 +103,7 @@ echo "<br>";
 catch(PDOException $e) {
     echo "Erro: " . $e->getMessage();
 }
+
 // Feche a conexão
 $conexao = null;
 ?>  
