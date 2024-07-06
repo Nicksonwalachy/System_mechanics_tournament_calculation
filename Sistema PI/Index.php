@@ -27,8 +27,8 @@
             <a href="./adddadosprovas.php"><input id="play" class="btn btn-primary" type="button" value="Iniciar"></a>
             <a href="./ranking.php"><input id="viewranking" class="btn btn-primary" type="button"
                     value="Ver Ranking"></a>
-            <a href="./viewteam.php"><input id="viewteam" class="btn btn-primary" type="button"
-                    value="Consultar Equipes"></a>
+            <!--<a href="./viewteam.php"><input id="viewteam" class="btn btn-primary" type="button"
+                    value="Consultar Equipes"></a>-->
         </Div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

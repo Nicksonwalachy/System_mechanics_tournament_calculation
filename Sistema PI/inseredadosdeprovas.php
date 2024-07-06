@@ -15,49 +15,48 @@
 </head>
 <body>
 <?php
-// Conectando ao banco de dados
+
 $conn = new mysqli('localhost', 'root', 'senha1', 'torneio');
 
-// Dados a serem inseridos
+
 $id_equipe = $_POST['equipe'];
-$velocidade = $_POST['velocidade'];
+$floatv = floatval($inputvelocidade = $_POST['velocidade']);
 $tracao = $_POST['tracao'];
 $rampa = $_POST['rampa'];
+$float= floatval($punicao = $_POST['pvelocidade']) ;
+$velocidade = $float + $floatv;
 
-// Preparando a consulta SQL
 
-
-///////// velocidade
 if($velocidade != null){
 $stmt = $conn->prepare("UPDATE Equipe SET velocidade = ? WHERE id = ?");
 $stmt->bind_param("di", $velocidade, $id_equipe);
 
 
-// Executando a consulta
+
 if ($stmt->execute()) {
     echo "Dados adicionados com sucesso à equipe selecionada";
 } else {
     echo "Erro: " . $stmt->error;
 }
 }
-/////// tração
+
 if($tracao != null){
 $stmt1 = $conn->prepare("UPDATE Equipe SET tração = ? WHERE id = ?");
 $stmt1->bind_param("di", $tracao, $id_equipe);
 
-// Executando a consulta
+
 if ($stmt1->execute()) {
     echo "Dados adicionados com sucesso à equipe selecionada";
 } else {
     echo "Erro: " . $stmt2->error;
 }
 }
-//////// rampa
+
 if($rampa != null){
 $stmt2 = $conn->prepare("UPDATE Equipe SET rampa = ? WHERE id = ?");
 $stmt2->bind_param("di", $rampa, $id_equipe);
 
-// Executando a consulta
+
 if ($stmt2->execute()) {
     echo "Dados adicionados com sucesso à equipe selecionada";
 } else {
@@ -65,7 +64,7 @@ if ($stmt2->execute()) {
 }
 
 
-// Fechando a conexão
+
 $conn->close();
 ?>
 <br>
